@@ -1,75 +1,19 @@
-# React + TypeScript + Vite
+# Mockwebshop – klädbutik (E-handel)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Detta är en modern e-handelsapplikation byggd i **React**, **TypeScript** och **Vite**. Applikationen kommunicerar med ett externt REST-API för att hämta godisprodukter, hantera en lokal varukorg via React Context, samt skicka typsäkra beställningar med validering via React Query (Mutations).
 
-Currently, two official plugins are available:
+## 🚀 Funktioner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dynamisk Produkthämtning:** Hämtar aktuellt sortiment och lagerstatus live från API:et.
+- **Global Varukorg (Context API):** Hanterar tillägg, borttagning och kvantitet av produkter globalt i applikationen.
+- **Smart Kassa (Checkout):** Sidan tar emot varukorgens innehåll och totalsumma via React Routers interna `state`, vilket minimerar onödiga API-anrop och omberäkningar.
+- **Typsäker Arkitektur:** 100% strikt TypeScript (inga `any`) med väldefinierade interfaces för både API-responser, produktstrukturer och orderdata.
+- **Asynkron Orderhantering:** Använder TanStack Query (React Query) `useMutation` för att posta ordrar, hantera laddningsstatus och felhantering på ett industristandardiserat sätt.
+- **Responsiv Layout:** Semantisk HTML kombinerat med React-Bootstrap för en mobilvänlig och följsam användarupplevelse.
 
-## React Compiler
+## 🛠️ Teknikstack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Frontend:** React (TSX), TypeScript, Vite
+- **Styling:** React-Bootstrap / Bootstrap 5
+- **Datahantering & API:** Axios, TanStack Query (React Query v5)
+- **Routing:** React Router DOM
