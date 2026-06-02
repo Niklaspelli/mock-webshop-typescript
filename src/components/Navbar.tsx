@@ -32,7 +32,7 @@ export function Navbar() {
           className="fw-bold"
           style={{ color: "#ffdf00" }}
         >
-          Bortakväll
+          Amazing Shirts{" "}
         </BootstrapNavbar.Brand>
 
         <BootstrapNavbar.Toggle aria-controls="main-navbar-nav" />

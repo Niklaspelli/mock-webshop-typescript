@@ -9,7 +9,9 @@ function Shop() {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
 
-  const products: Product[] = apiResponse?.data || [];
+  const products: Product[] = apiResponse || [];
+
+  console.log("data:", apiResponse);
 
   return (
     <main>
@@ -23,7 +25,7 @@ function Shop() {
                   fontSize: "clamp(2rem, 5vw, 3.5rem)",
                 }}
               >
-                Välkommen till Bortakväll!
+                Välkommen till Amazing shirts!
               </h1>
             </header>
 

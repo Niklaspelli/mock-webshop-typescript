@@ -3,12 +3,12 @@ import { ShopContext } from "./ShopContext";
 
 export const ShopContextProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<Record<number, number>>(() => {
-    const localData = localStorage.getItem("bortakvall_cart");
+    const localData = localStorage.getItem("amazingshirt_cart");
     return localData ? JSON.parse(localData) : {};
   });
 
   useEffect(() => {
-    localStorage.setItem("bortakvall_cart", JSON.stringify(cartItems));
+    localStorage.setItem("amazingshirt_cart", JSON.stringify(cartItems));
   }, [cartItems]);
   const clearCart = () => {
     setCartItems({});

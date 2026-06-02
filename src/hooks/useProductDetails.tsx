@@ -5,8 +5,8 @@ import type { Product } from "../types/types";
 const url = import.meta.env.VITE_GET_PRODUCTS_URL;
 
 const fetchProductsDetails = async (id: string): Promise<Product> => {
-  const { data } = await axios.get<{ data: Product }>(`${url}/${id}`);
-  return data.data;
+  const { data } = await axios.get(`${url}/${id}`);
+  return data;
 };
 
 export const useProductsDetails = (id: string) => {

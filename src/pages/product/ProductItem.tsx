@@ -33,7 +33,7 @@ function ProductItem({ products }: { products: Product[] }) {
                     >
                       <Card.Img
                         variant="top"
-                        src={`https://www.bortakvall.se/${images?.thumbnail}`}
+                        src={images[0]?.thumbnail}
                         alt={name}
                         style={{
                           width: "100%",

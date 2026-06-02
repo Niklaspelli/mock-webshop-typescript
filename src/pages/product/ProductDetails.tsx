@@ -14,6 +14,8 @@ function ProductDetails() {
     return <p>Produkten kunde inte hittas.</p>;
   }
 
+  console.log("data", product);
+
   return (
     <main
       className="container-fluid py-4 py-md-5"
@@ -32,7 +34,7 @@ function ProductDetails() {
                 <Col xs={12} md={6}>
                   <div className="bg-light h-100">
                     <Card.Img
-                      src={`https://www.bortakvall.se/${product.images?.thumbnail}`}
+                      src={product.images?.[0]?.large}
                       alt={product.name}
                       className="img-fluid w-100 h-100"
                       style={{

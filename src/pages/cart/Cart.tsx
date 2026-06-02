@@ -20,7 +20,7 @@ export const Cart = () => {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
 
-  const allProducts = apiResponse?.data || [];
+  const allProducts = apiResponse || [];
 
   const productsInCart = allProducts.filter((product) => {
     const quantity = cartItems[product.id] || cartItems[product.id] || 0;
